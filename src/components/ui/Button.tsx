@@ -10,7 +10,7 @@ interface Iprops {
 const Button = ({ children, className, width = "w-full", ...rest }: Iprops) => {
   return (
     <button
-      className={`${className} ${width} w-full h-14 text-white p-2 rounded-md font-bold`}
+      className={`${className} ${width} w-full h-14 text-white p-2 rounded-md`}
       {...rest}
     >
       {children}

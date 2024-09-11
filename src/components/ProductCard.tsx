@@ -37,9 +37,7 @@ const ProductCard = ({ product }: Iprops) => {
       </div>
 
       <div className="flex justify-between items-center gap-2 mt-5">
-        <Button className="bg-blue-500" onClick={() => alert("click")}>
-          Edit
-        </Button>
+        <Button className="bg-blue-500">Edit</Button>
         <Button className="bg-red-500">Delete</Button>
       </div>
     </div>
