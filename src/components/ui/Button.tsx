@@ -4,6 +4,7 @@ interface Iprops {
   children: ReactNode;
   className?: string;
   width?: "w-full" | "w-fit";
+  onClick?: () => void;
 }
 
 const Button = ({ children, className, width = "w-full", ...rest }: Iprops) => {
