@@ -5,12 +5,13 @@ interface Iprops {
   className?: string;
   width?: "w-full" | "w-fit";
   onClick?: () => void;
+  type?: "submit" | "reset" | "button";
 }
 
 const Button = ({ children, className, width = "w-full", ...rest }: Iprops) => {
   return (
     <button
-      className={`${className} ${width} w-full h-14 text-white p-2 rounded-md`}
+      className={`${className} ${width} h-14 text-white p-2 rounded-md`}
       {...rest}
     >
       {children}
