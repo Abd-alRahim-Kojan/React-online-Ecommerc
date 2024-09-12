@@ -2,8 +2,8 @@ import { useState } from "react";
 import "./App.css";
 import ProductCard from "./components/ProductCard";
 import Modal from "./components/ui/Modal";
-import { productList } from "./data";
-import { Button } from "@headlessui/react";
+import { formInputsList, productList } from "./data";
+import { Button, Input } from "@headlessui/react";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +19,17 @@ const App = () => {
   const renderProductList = productList.map((product) => {
     return <ProductCard key={product.id} product={product} />;
   });
+  const renderFormInputList = formInputsList.map((input) => (
+    <div key={input.label} className="flex flex-col gap-1">
+      <label htmlFor={input.id}>{input.label}</label>
+      <Input
+        type="text"
+        id={input.id}
+        name={input.name}
+        className="border border-gray-300 p-2 rounded-md mb-4 focus:outline-green-500"
+      />
+    </div>
+  ));
 
   return (
     <main className="container mx-auto">
@@ -35,17 +46,18 @@ const App = () => {
       </div>
 
       <Modal isOpen={isOpen} closeModal={close} title="Add New Product">
-        <div className="flex justify-between items-center gap-2">
+        <form className="flex justify-between items-center gap-2 mt-6">
+          {renderFormInputList}
           <Button className="w-full h-14 text-white p-2 rounded-md bg-green-600">
-            submit
+            Submit
           </Button>
           <Button
             className="w-full h-14 text-white p-2 rounded-md bg-gray-400"
             onClick={close}
           >
-            Cancle
+            Cancel
           </Button>
-        </div>
+        </form>
       </Modal>
     </main>
   );
