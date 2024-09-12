@@ -46,17 +46,19 @@ const App = () => {
       </div>
 
       <Modal isOpen={isOpen} closeModal={close} title="Add New Product">
-        <form className="flex justify-between items-center gap-2 mt-6">
+        <form>
           {renderFormInputList}
-          <Button className="w-full h-14 text-white p-2 rounded-md bg-green-600">
-            Submit
-          </Button>
-          <Button
-            className="w-full h-14 text-white p-2 rounded-md bg-gray-400"
-            onClick={close}
-          >
-            Cancel
-          </Button>
+          <div className="flex justify-between items-center gap-2 mt-6">
+            <Button className="w-full h-14 text-white p-2 rounded-md bg-green-600">
+              Submit
+            </Button>
+            <Button
+              className="w-full h-14 text-white p-2 rounded-md bg-gray-400"
+              onClick={close}
+            >
+              Cancel
+            </Button>
+          </div>
         </form>
       </Modal>
     </main>
